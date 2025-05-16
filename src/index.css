@@ -1,0 +1,131 @@
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+ @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.75rem;
+    --brand-50: 215 100% 98%;
+    --brand-100: 221 94% 93%;
+    --brand-200: 219 92% 85%;
+    --brand-300: 219 90% 72%;
+    --brand-400: 219 87% 62%;
+    --brand-500: 221 83% 53%;
+    --brand-600: 223 77% 48%;
+    --brand-700: 226 71% 40%;
+    --brand-800: 228 67% 32%;
+    --brand-900: 228 61% 21%;
+    --brand-950: 230 66% 16%;
+    --guardian-primary: 210 100% 35%;
+    --guardian-secondary: 200 70% 45%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  
+  /* Black text color for inputs */
+  input {
+    @apply text-black;
+  }
+}
+
+.gradient-bg {
+  @apply bg-gradient-to-br from-brand-600 to-brand-800 text-white;
+}
+
+.feature-card {
+  @apply bg-white dark:bg-gray-800 p-6 rounded-lg border border-gray-100 dark:border-gray-700 shadow-sm hover:shadow-md transition-shadow duration-300;
+}
+
+/* Advanced 3D button effect */
+.btn-3d {
+  @apply relative bg-brand-500 text-white font-medium py-2 px-4 rounded-lg shadow-lg transition-transform duration-200 active:translate-y-1 active:shadow-none;
+}
+
+.btn-3d:before {
+  content: '';
+  @apply absolute inset-0 bg-black opacity-0 rounded-lg transition-opacity duration-200;
+}
+
+.btn-3d:hover:before {
+  @apply opacity-10;
+}
+
+.btn-3d:active:before {
+  @apply opacity-20;
+}
+
+/* Custom loader */
+.loader-dots {
+  @apply flex space-x-1;
+}
+
+.loader-dots div {
+  @apply w-2 h-2 bg-brand-500 rounded-full animate-bounce;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.loader-dots div:nth-child(1) {
+  animation-delay: -0.32s;
+}
+
+.loader-dots div:nth-child(2) {
+  animation-delay: -0.16s;
+}
+
+/* Guardian colors for buttons */
+.guardian-button {
+  @apply bg-blue-600 hover:bg-blue-700 text-white;
+}
+
+/* Blue hover state for Learn More button */
+.blue-hover:hover {
+  @apply bg-blue-500;
+}
