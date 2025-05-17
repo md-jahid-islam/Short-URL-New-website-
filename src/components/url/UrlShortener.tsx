@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -30,7 +29,7 @@ export const UrlShortener = () => {
       return;
     }
 
-    // Validate URL format
+    // ========== Validate URL format ======= //
     try {
       new URL(url);
     } catch (err) {
@@ -40,18 +39,17 @@ export const UrlShortener = () => {
 
     setIsLoading(true);
 
+    // ========== For now, we'll simulate it ======== 
     try {
-      // This would be an API call in a real application
-      // For now, we'll simulate it
       await new Promise(resolve => setTimeout(resolve, 700));
       
-      // Generate a short code - in a real app this would come from the API
+      // =========== Generate a short code - in a real app this would come from the API ========= //
       const shortCode = customAlias || Math.random().toString(36).substring(2, 8);
       const generatedShortUrl = `https://lksh.rt/${shortCode}`;
       
       setShortUrl(generatedShortUrl);
       
-      // Store the URL in localStorage
+      // ================ Store the URL in localStorage ============= //
       const storedUrls = JSON.parse(localStorage.getItem('shortened_urls') || '[]');
       const newUrl = {
         originalUrl: url,
@@ -62,14 +60,14 @@ export const UrlShortener = () => {
       };
       localStorage.setItem('shortened_urls', JSON.stringify([newUrl, ...storedUrls]));
       
-      // Also store in creation history
+      // ============ Also store in creation history ================ //
       const creationHistory = JSON.parse(localStorage.getItem('url_creation_history') || '[]');
       const newHistoryItem: CreationHistoryItem = {
         id: Date.now().toString(),
         shortUrl: generatedShortUrl,
         originalUrl: url,
         createdAt: new Date().toISOString(),
-        createdBy: 'Current User' // In a real app, this would be the actual user
+        createdBy: 'Current User' 
       };
       localStorage.setItem('url_creation_history', JSON.stringify([newHistoryItem, ...creationHistory]));
       
@@ -98,33 +96,17 @@ export const UrlShortener = () => {
     <div className="space-y-6">
       <form onSubmit={handleSubmit} className="space-y-4">
         <div className="space-y-2">
-          <Label htmlFor="url">Enter Long URL</Label>
-          <Input 
-            id="url" 
-            value={url} 
-            onChange={(e) => setUrl(e.target.value)} 
-            placeholder="https://example.com/very/long/url/that/needs/shortening" 
-            className="text-black"
-            required
-          />
+        <Label htmlFor="url">Enter Long URL</Label>
+        <Input id="url" value={url} onChange={(e) => setUrl(e.target.value)} placeholder="https://example.com/very/long/url/that/needs/shortening" className="text-black"required/>
         </div>
         
         <div className="space-y-2">
-          <Label htmlFor="alias">Custom Alias (Optional)</Label>
-          <Input 
-            id="alias" 
-            value={customAlias} 
-            onChange={(e) => setCustomAlias(e.target.value)} 
-            placeholder="my-custom-url" 
-            className="text-black"
-          />
+        <Label htmlFor="alias">Custom Alias (Optional)</Label>
+        <Input id="alias" value={customAlias} onChange={(e) => setCustomAlias(e.target.value)} placeholder="my-custom-url" className="text-black"/>
         </div>
         
-        <Button 
-          type="submit" 
-          className="w-full bg-guardian-primary hover:bg-blue-500" 
-          disabled={isLoading}
-        >
+        <Button type="submit" className="w-full bg-guardian-primary hover:bg-blue-500" 
+          disabled={isLoading}>
           {isLoading ? (
             <div className="loader-dots">
               <div></div>
@@ -132,7 +114,7 @@ export const UrlShortener = () => {
               <div></div>
             </div>
           ) : (
-            'Shorten URL'
+          'Shorten URL'
           )}
         </Button>
       </form>
@@ -142,36 +124,21 @@ export const UrlShortener = () => {
           <div className="flex items-center justify-between">
             <div className="truncate">
               <h4 className="text-sm font-medium text-gray-500">Your shortened URL:</h4>
-              <a 
-                href={shortUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                className="text-blue-600 hover:underline font-medium truncate block"
-              >
-                {shortUrl}
+              <a href={shortUrl} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline font-medium truncate block">
+              {shortUrl}
               </a>
             </div>
-            <Button 
-              size="sm" 
-              variant="outline" 
-              onClick={handleCopy} 
-              className="flex-shrink-0 ml-2"
-            >
-              {showCopied ? 'Copied!' : <CopyIcon className="h-4 w-4" />}
+            <Button size="sm" variant="outline" onClick={handleCopy} className="flex-shrink-0 ml-2">
+            {showCopied ? 'Copied!' : <CopyIcon className="h-4 w-4" />}
             </Button>
           </div>
           <div className="flex gap-2 mt-4">
             <Link to={`/qr-code/${shortUrl.split('/').pop()}`} className="flex-1">
-              <Button 
-                variant="outline" 
-                className="w-full bg-guardian-primary text-white hover:bg-guardian-secondary"
-              >
-                View QR Code
+              <Button variant="outline" className="w-full bg-guardian-primary text-white hover:bg-guardian-secondary">View QR Code
               </Button>
             </Link>
             <Link to="/dashboard/urls" className="flex-1">
-              <Button className="w-full bg-guardian-primary hover:bg-guardian-secondary">
-                View All URLs
+              <Button className="w-full bg-guardian-primary hover:bg-guardian-secondary">View All URLs
               </Button>
             </Link>
           </div>
@@ -179,4 +146,4 @@ export const UrlShortener = () => {
       )}
     </div>
   );
-};
+ };

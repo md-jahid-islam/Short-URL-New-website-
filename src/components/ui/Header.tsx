@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -30,8 +29,7 @@ export const Header: React.FC = () => {
           <button
             type="button"
             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-            onClick={() => setMobileMenuOpen(true)}
-          >
+            onClick={() => setMobileMenuOpen(true)}>
             <span className="sr-only">Open main menu</span>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
@@ -55,10 +53,10 @@ export const Header: React.FC = () => {
           ) : (
             <div className="flex gap-4">
               <Link to="/login">
-                <Button variant="outline">Log in</Button>
+              <Button variant="outline">Log in</Button>
               </Link>
               <Link to="/register">
-                <Button>Sign up</Button>
+              <Button>Sign up</Button>
               </Link>
             </div>
           )}
@@ -84,79 +82,43 @@ export const Header: React.FC = () => {
                 </div>
               </Link>
               <button
-                type="button"
-                className="-m-2.5 rounded-md p-2.5 text-gray-700"
-                onClick={() => setMobileMenuOpen(false)}
-              >
+                type="button"className="-m-2.5 rounded-md p-2.5 text-gray-700"onClick={() => setMobileMenuOpen(false)}>
                 <span className="sr-only">Close menu</span>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-6 w-6">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
               </button>
             </div>
             <div className="mt-6 flow-root">
               <div className="-my-6 divide-y divide-gray-500/10">
                 <div className="space-y-2 py-6">
-                  <Link
-                    to="/features"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Features
+                  <Link to="/features"className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"onClick={() => setMobileMenuOpen(false)}>
+                  Features
                   </Link>
-                  <Link
-                    to="/pricing"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Pricing
+                  <Link to="/pricing" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"onClick={() => setMobileMenuOpen(false)}>
+                  Pricing
                   </Link>
-                  <Link
-                    to="/domain"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Domain
+                  <Link to="/domain" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"onClick={() => setMobileMenuOpen(false)}>
+                  Domain
                   </Link>
-                  <Link
-                    to="/hosting"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    Hosting
+                  <Link to="/hosting"className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"onClick={() => setMobileMenuOpen(false)}>
+                  Hosting
                   </Link>
-                  <Link
-                    to="/about"
-                    className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                    onClick={() => setMobileMenuOpen(false)}
-                  >
-                    About
+                  <Link to="/about" className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"onClick={() => setMobileMenuOpen(false)}>
+                  About
                   </Link>
                 </div>
                 <div className="py-6">
                   {isAuthenticated ? (
-                    <Link
-                      to="/dashboard"
-                      className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                      onClick={() => setMobileMenuOpen(false)}
-                    >
-                      Dashboard
+                    <Link to="/dashboard" className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"onClick={() => setMobileMenuOpen(false)}>
+                     Dashboard
                     </Link>
                   ) : (
                     <>
-                      <Link
-                        to="/login"
-                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Log in
+                      <Link to="/login"className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"onClick={() => setMobileMenuOpen(false)}>
+                      Log in
                       </Link>
-                      <Link
-                        to="/register"
-                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                        onClick={() => setMobileMenuOpen(false)}
-                      >
-                        Sign up
+                      <Link to="/register"className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"onClick={() => setMobileMenuOpen(false)}>
+                      Sign up
                       </Link>
                     </>
                   )}
@@ -168,4 +130,4 @@ export const Header: React.FC = () => {
       )}
     </header>
   );
-};
+  };

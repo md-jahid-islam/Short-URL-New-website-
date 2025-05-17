@@ -5,10 +5,9 @@ import {
   ToastDescription,
   ToastProvider,
   ToastTitle,
-  ToastViewport,
-} from "@/components/ui/toast"
+  ToastViewport,} from "@/components/ui/toast"
 
-export function Toaster() {
+ export function Toaster() {
   const { toasts } = useToast()
 
   return (
@@ -19,7 +18,7 @@ export function Toaster() {
             <div className="grid gap-1">
               {title && <ToastTitle>{title}</ToastTitle>}
               {description && (
-                <ToastDescription>{description}</ToastDescription>
+              <ToastDescription>{description}</ToastDescription>
               )}
             </div>
             {action}
@@ -30,4 +29,4 @@ export function Toaster() {
       <ToastViewport />
     </ToastProvider>
   )
-}
+ }
