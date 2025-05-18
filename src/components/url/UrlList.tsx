@@ -216,8 +216,7 @@ import { Label } from '@/components/ui/label';
           <div className="py-4">
             <p className="text-sm font-medium">Short URL: {deleteConfirmUrl?.shortUrl}</p>
             <p className="text-sm text-gray-500 truncate" title={deleteConfirmUrl?.originalUrl}>
-            Original: {truncateUrl(deleteConfirmUrl?.originalUrl || '', 50)}
-            </p>
+            Original: {truncateUrl(deleteConfirmUrl?.originalUrl || '', 50)}</p>
           </div>
           <DialogFooter>
             <Button variant="outline" onClick={() => setIsDeleteDialogOpen(false)}>Cancel</Button>

@@ -261,8 +261,7 @@ import { useNavigate } from 'react-router-dom';
       <div className="grid gap-4 py-4">
       <div className="grid grid-cols-1 gap-2">
       <label htmlFor="gen-name" className="text-sm font-medium">Full Name *</label>
-      <input id="gen-name"type="text"className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-black"placeholder="Jahidul Islam"
-      value={name}onChange={(e) => setName(e.target.value)}required/>
+      <input id="gen-name"type="text"className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-black"placeholder="Jahidul Islam"value={name}onChange={(e) => setName(e.target.value)}required/>
       </div>
 
       <div className="grid grid-cols-1 gap-2">
@@ -273,8 +272,7 @@ import { useNavigate } from 'react-router-dom';
 
       <div className="grid grid-cols-1 gap-2">
       <label htmlFor="gen-resume" className="text-sm font-medium">Resume *</label>
-      <input id="gen-resume"type="file" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"
-      onChange={(e) => setResumeFile(e.target.value)}required/>
+      <input id="gen-resume"type="file" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm"onChange={(e) => setResumeFile(e.target.value)}required/>
       </div>
 
       <div className="grid grid-cols-1 gap-2">

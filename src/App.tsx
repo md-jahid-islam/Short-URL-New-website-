@@ -94,8 +94,7 @@ import { useEffect } from "react";
                 <Route path="/cookies" element={<CookiesPage />} />
                 <Route path="/qr-code/:shortCode" element={<QrCodePage />} />
                 <Route path="/help" element={<HelpCenterPage />} />
-              </Route>
-              
+              </Route>            
               <Route path="/dashboard" element={<DashboardLayout />}>
                 <Route index element={<DashboardHome />} />
                 <Route path="urls" element={<UrlsPage />} />
@@ -103,11 +102,9 @@ import { useEffect } from "react";
                 <Route path="analytics" element={<AnalyticsPage />} />
                 <Route path="profile" element={<ProfilePage />} />
                 <Route path="settings" element={<SettingsPage />} />
-              </Route>
-              
+              </Route>   
               {/* Short URL redirect route */}
-              <Route path="/s/:shortCode" element={<RedirectPage />} />
-              
+              <Route path="/s/:shortCode" element={<RedirectPage />} />        
               {/* Catch-all for 404s */}
               <Route path="*" element={<NotFound />} />
             </Routes>
