@@ -305,7 +305,7 @@ import { Label } from '../ui/label';
 
                   {/* Click to show history options */}
                   <Button onClick={() => setCurrentView('historyOptions')} className="w-full justify-start text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 rounded-md py-2 px-3 transition-colors duration-200 mb-4">
-                  <FaHistory className="mr-2 text-purple-500" /> Voice History
+                  <FaHistory className="mr-2 text-purple-500 animate-pulse " /> I am ready for your help.!!
                   </Button>
 
                   {/* AI Terms of Use and Powered by */}
@@ -422,15 +422,13 @@ import { Label } from '../ui/label';
 
         {/* "Visit now!!" text - remains outside the modal */}
         <div className="flex justify-end mt-2">
-        <span className='text-center text-[#FF0075] text-sm font-medium animate-pulse'>visit now!!</span>
+        <span className='text-center text-[#F7418F] text-sm font-medium'> I am ready for your help.!!</span>
         </div>
 
         {/* Main FAB Button */}
         <motion.button
-          whileTap={{ scale: 0.9 }}
-          onClick={() => setIsOpen(!isOpen)}
-          className={`flex items-center justify-center w-14 h-14 rounded-full shadow-xl ${
-            isOpen ? 'bg-gray-700' : 'bg-gradient-to-r from-blue-500 to-green-500'
+          whileTap={{ scale: 0.9 }} onClick={() => setIsOpen(!isOpen)}className={`flex items-center justify-center w-14 h-14 rounded-full shadow-xl ${
+          isOpen ? 'bg-gray-700' : 'bg-gradient-to-r from-blue-500 to-green-500'
           } text-white transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400`}
           aria-label={isOpen ? 'Close AI chat window' : 'Open AI chat window'}>
           {isOpen ? <FaTimes className="text-xl" /> : <FaComment className="text-xl" />}
