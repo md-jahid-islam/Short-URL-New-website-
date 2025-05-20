@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { UrlShortener } from '@/components/url/UrlShortener';
@@ -7,9 +6,9 @@ import { Link } from 'react-router-dom';
 import { History } from 'lucide-react';
 import { toast } from 'sonner';
 
+// =========== For now, we'll use mock data from UrlList ============= // 
  const UrlsPage = () => {
-  const handleExport = () => {
- // =========== For now, we'll use mock data from UrlList ============= // 
+ const handleExport = () => {
  const mockData = [
       {
         originalUrl: 'https://www.example.com/very/long/url/that/needs/shortening',
@@ -41,7 +40,6 @@ import { toast } from 'sonner';
         item.clicks.toString()
       ])
     ].map(row => row.join(',')).join('\n');
-
     // ========== Create and download the CSV file ============== //
     const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
     const url = URL.createObjectURL(blob);

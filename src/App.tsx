@@ -102,6 +102,7 @@ import { useEffect } from "react";
                 <Route path="analytics" element={<AnalyticsPage />} />
                 <Route path="profile" element={<ProfilePage />} />
                 <Route path="settings" element={<SettingsPage />} />
+       
               </Route>   
               {/* Short URL redirect route */}
               <Route path="/s/:shortCode" element={<RedirectPage />} />        

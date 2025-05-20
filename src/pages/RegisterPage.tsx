@@ -80,7 +80,7 @@ const RegisterPage = () => {
       localStorage.setItem('mongodb_users', JSON.stringify(usersInStorage));
       
       toast.success('Registration successful! User data stored.');
-      navigate('/dashboard');
+      navigate('/Login');
     } catch (error) {
       toast.error('Registration failed. Please try again.');
     } finally {
@@ -115,8 +115,7 @@ const RegisterPage = () => {
         </h2>
         <p className="mt-2 text-center text-sm text-gray-600">
           Already have an account?{' '}
-          <Link to="/login" className="font-medium text-brand-600 hover:text-brand-500">
-          Sign in
+          <Link to="/login" className="font-medium text-brand-600 hover:text-brand-500">Sign in
           </Link>
         </p>
       </div>
@@ -128,16 +127,14 @@ const RegisterPage = () => {
               <Label htmlFor="name" className="block text-left text-sm font-medium text-gray-700">Name </Label>
               <Input id="name" name="name" type="text" autoComplete="name"value={values.name} onChange={handleChange} className="text-black"/>
               {errors.name && (
-              <p className="mt-1 text-sm text-red-600 text-left">{errors.name}</p>
-              )}
+              <p className="mt-1 text-sm text-red-600 text-left">{errors.name}</p>)}
             </div>
 
             <div className="space-y-2">
               <Label htmlFor="email" className="block text-left text-sm font-medium text-gray-700">Email address</Label>
               <Input id="email" name="email" type="email" autoComplete="email"value={values.email}onChange={handleChange}className="text-black"/>
               {errors.email && (
-              <p className="mt-1 text-sm text-red-600 text-left">{errors.email}</p>
-              )}
+              <p className="mt-1 text-sm text-red-600 text-left">{errors.email}</p>)}
             </div>
 
             <div className="space-y-2">
@@ -147,10 +144,7 @@ const RegisterPage = () => {
                 <button type="button" className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-gray-700"
                   onClick={togglePasswordVisibility} tabIndex={-1}>
                   {showPassword ? (
-                    <EyeOff className="h-5 w-5" />
-                  ) : (
-                    <Eye className="h-5 w-5" />
-                  )}
+                  <EyeOff className="h-5 w-5" />) : (<Eye className="h-5 w-5" />)}
                 </button>
                 {errors.password && (
                 <p className="mt-1 text-sm text-red-600 text-left">{errors.password}</p>
@@ -168,10 +162,7 @@ const RegisterPage = () => {
                 <button type="button" className="absolute inset-y-0 right-3 flex items-center text-gray-500 hover:text-gray-700"
                   onClick={toggleConfirmPasswordVisibility} tabIndex={-1}>
                   {showConfirmPassword ? (
-                    <EyeOff className="h-5 w-5" />
-                  ) : (
-                    <Eye className="h-5 w-5" />
-                  )}
+                  <EyeOff className="h-5 w-5" />) : (<Eye className="h-5 w-5" />)}
                 </button>
                 {errors.confirmPassword && (
                 <p className="mt-1 text-sm text-red-600 text-left">{errors.confirmPassword}</p>
@@ -193,11 +184,7 @@ const RegisterPage = () => {
               <Button type="submit" className="w-full bg-guardian-primary hover:bg-guardian-secondary text-white" disabled={isSubmitting}>
                 {isSubmitting ? (
                   <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Creating account...
-                  </>
-                ) : (
-                  'Sign up'
-                )}
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Creating account...</>) : ('Sign up')}
               </Button>
             </div>
           </form>
