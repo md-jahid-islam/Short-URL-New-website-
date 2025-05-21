@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Sidebar } from '../dashboard/Sidebar';
 import { DashboardHeader } from '../dashboard/DashboardHeader';
+import FooterComponents from '../footer/FooterComponents';
 
  export const DashboardLayout: React.FC = () => {
  const [sidebarOpen, setSidebarOpen] = React.useState(false);
@@ -15,6 +16,7 @@ import { DashboardHeader } from '../dashboard/DashboardHeader';
         
  <main className="flex-1 p-4 md:p-6 overflow-y-auto">
  <Outlet />
+ <FooterComponents/>
  </main>
  </div>
  </div>

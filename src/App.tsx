@@ -40,6 +40,7 @@ import ResumeStoragePage from "./pages/ResumeStoragePage";
 import ChoosePlanPage from "./pages/ChoosePlanPage";
 import ContactSalesPage from "./pages/ContactSalesPage";
 import { useEffect } from "react";
+import SignUp from "./pages/SignUp";
 
  // =========== Initialize theme from localStorage ================ //
  const initTheme = () => {
@@ -94,6 +95,7 @@ import { useEffect } from "react";
                 <Route path="/cookies" element={<CookiesPage />} />
                 <Route path="/qr-code/:shortCode" element={<QrCodePage />} />
                 <Route path="/help" element={<HelpCenterPage />} />
+
               </Route>            
               <Route path="/dashboard" element={<DashboardLayout />}>
                 <Route index element={<DashboardHome />} />
@@ -101,8 +103,7 @@ import { useEffect } from "react";
                 <Route path="history" element={<HistoryPage />} />
                 <Route path="analytics" element={<AnalyticsPage />} />
                 <Route path="profile" element={<ProfilePage />} />
-                <Route path="settings" element={<SettingsPage />} />
-       
+                <Route path="settings" element={<SettingsPage />} />   
               </Route>   
               {/* Short URL redirect route */}
               <Route path="/s/:shortCode" element={<RedirectPage />} />        

@@ -11,8 +11,8 @@ import FooterComponents from '../footer/FooterComponents';
  <main className="flex-grow">
  <Outlet />
  </main>
- <Footer />
  <FooterComponents/>
+ <Footer />
  </div>
   );
  };
