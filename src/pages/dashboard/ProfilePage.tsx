@@ -34,14 +34,14 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
   const [isUploading, setIsUploading] = useState(false);
 
   const [profileValues, setProfileValues] = useState<ProfileFormValues>({
-    fullName: 'John Doe',
-    email: 'john@example.com',
-    bio: 'Web developer and URL shortening enthusiast.',
-    company: 'LinkShort Inc.',
-    location: 'San Francisco, CA',
-    website: 'https://johndoe.com',
-    twitter: 'johndoe',
-    github: 'johndoe',
+    fullName: 'Jahidul Islam',
+    email: 'jahidulislamwebbd@gmail.com',
+    bio: 'add Your Bio here',
+    company: 'Your Company Name',
+    location: 'Your City, Your Country',
+    website: 'Your Website url',
+    twitter: 'Your__Twitter_hendle',
+    github: 'Your__Github_hendle',
   });
 
   const [passwordValues, setPasswordValues] = useState<PasswordFormValues>({
@@ -108,16 +108,19 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
     passwordValues.confirmPassword.length > 0);
   }, [passwordValues]);
   
+  // =========== handle Profile Change ================ //
   const handleProfileChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
   const { name, value } = e.target;
   setProfileValues(prev => ({ ...prev, [name]: value }));
   };
 
+  // ============= handle Password Change ================ //
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
   const { name, value } = e.target;
   setPasswordValues(prev => ({ ...prev, [name]: value }));
   };
-
+  
+  // ============ handle Profile Submit ================ //
   const handleProfileSubmit = (e: FormEvent) => {
     e.preventDefault();
     if (!isProfileFormValid) return;
@@ -161,7 +164,7 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
       return;
     }
 
-    // This would verify with an API in a real app
+    // ========== This would verify with an API in a real app ========== //
     setTimeout(() => {
       setTwoFactorEnabled(true);
       toast({
@@ -172,8 +175,8 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
     }, 1000);
   };
 
+  // =========== This would make an API call in a real app ========= //
   const handleDisableTwoFactor = () => {
-    // This would make an API call in a real app
     setTimeout(() => {
       setTwoFactorEnabled(false);
       toast({
@@ -213,7 +216,8 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
     
     setIsUploading(false);
   };
-
+  
+  // ============ handle Remove Profile Image ================ //
   const handleRemoveProfileImage = () => {
     setProfileImage(null);
     setProfileImageFile(null);
@@ -296,8 +300,7 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-2">
                     <Label htmlFor="fullName">Full Name</Label>
-                    <Input id="fullName" name="fullName" value={profileValues.fullName}onChange={handleProfileChange}
-                    className={profileErrors.fullName ? "border-red-500" : ""}/>
+                    <Input id="fullName" name="fullName" value={profileValues.fullName}onChange={handleProfileChange} className={profileErrors.fullName ? "border-red-500" : ""}/>
                     {profileErrors.fullName && (
                     <p className="text-sm text-red-500">{profileErrors.fullName}</p>
                     )}
@@ -326,8 +329,7 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
                   
                   <div className="space-y-2">
                     <Label htmlFor="website">Website</Label>
-                    <Input id="website" name="website"type="url" value={profileValues.website}
-                    onChange={handleProfileChange}className={profileErrors.website ? "border-red-500" : ""}/>
+                    <Input id="website" name="website"type="url" value={profileValues.website} onChange={handleProfileChange}className={profileErrors.website ? "border-red-500" : ""}/>
                     {profileErrors.website && (
                     <p className="text-sm text-red-500">{profileErrors.website}</p>
                     )}
@@ -359,11 +361,8 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
                 <div className="space-y-2">
                 <Label htmlFor="currentPassword">Current Password</Label>
                 <div className="relative">
-                <Input id="currentPassword" name="currentPassword"type={showCurrentPassword ? "text" : "password"}
-                value={passwordValues.currentPassword}onChange={handlePasswordChange}
-                className={passwordErrors.currentPassword ? "border-red-500 pr-10" : "pr-10"}/>
-                <button
-                      type="button"className="absolute inset-y-0 right-0 flex items-center pr-3"onClick={() => setShowCurrentPassword(!showCurrentPassword)}>
+                <Input id="currentPassword" name="currentPassword"type={showCurrentPassword ? "text" : "password"} value={passwordValues.currentPassword}onChange={handlePasswordChange} className={passwordErrors.currentPassword ? "border-red-500 pr-10" : "pr-10"}/>
+                <button type="button"className="absolute inset-y-0 right-0 flex items-center pr-3"onClick={() => setShowCurrentPassword(!showCurrentPassword)}>
                       {showCurrentPassword ? (
                       <EyeOffIcon className="h-4 w-4 text-gray-500" />
                       ) : (
@@ -397,11 +396,8 @@ import { EyeIcon, EyeOffIcon } from 'lucide-react';
                 <div className="space-y-2">
                   <Label htmlFor="confirmPassword">Confirm New Password</Label>
                   <div className="relative">
-                    <Input id="confirmPassword" name="confirmPassword" type={showConfirmPassword ? "text" : "password"}
-                    value={passwordValues.confirmPassword} onChange={handlePasswordChange}
-                    className={passwordErrors.confirmPassword ? "border-red-500 pr-10" : "pr-10"}/>
-                    <button
-                      type="button"className="absolute inset-y-0 right-0 flex items-center pr-3"onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
+                    <Input id="confirmPassword" name="confirmPassword" type={showConfirmPassword ? "text" : "password"} value={passwordValues.confirmPassword} onChange={handlePasswordChange}className={passwordErrors.confirmPassword ? "border-red-500 pr-10" : "pr-10"}/>
+                    <button type="button"className="absolute inset-y-0 right-0 flex items-center pr-3"onClick={() => setShowConfirmPassword(!showConfirmPassword)}>
                       {showConfirmPassword ? (
                       <EyeOffIcon className="h-4 w-4 text-gray-500" />
                       ) : (
