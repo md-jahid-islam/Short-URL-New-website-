@@ -133,7 +133,7 @@ import { Link } from 'react-router-dom';
           <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d" alt="Michael Chen" className="w-full h-full object-cover"/>
           </div>
             <div className="p-6">
-            <h3 className="text-xl font-bold mb-1">Michael Chen</h3>
+            <h3 className="text-xl font-bold mb-1">Tamim Al Hridoy</h3>
             <p className="text-brand-600 mb-4">Chief Product Officer</p>
             <p className="text-gray-600">Michael oversees product development, focusing on creating intuitive and powerful features.</p>
             </div>
